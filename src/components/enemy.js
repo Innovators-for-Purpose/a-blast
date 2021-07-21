@@ -86,7 +86,6 @@ AFRAME.registerComponent('enemy', {
       this.whiteMaterial = new THREE.MeshBasicMaterial({color: this.color, transparent: true });
       mesh.normalMaterial = mesh.material;
       mesh.material = this.whiteMaterial;
-
       this.gunGlow.visible = false;
 
       this.system.activeEnemies.splice(this.system.activeEnemies.indexOf(this.el), 1);
@@ -209,7 +208,7 @@ AFRAME.registerComponent('enemy', {
 
       var scale = this.scale + t0 * ( 2 - t0 ); //out easing
 
-      var mesh = this.el.getObject3D('mesh');
+       var mesh = this.el.getObject3D('mesh');
       mesh.scale.set(scale, scale, scale);
       mesh.material.opacity = Math.max(0, 1 - t0 * 2.5);
       if (t0 >= 1) {

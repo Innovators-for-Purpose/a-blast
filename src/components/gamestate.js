@@ -81,7 +81,7 @@ AFRAME.registerComponent('gamestate', {
 
     registerHandler('player-hit', function (newState) {
       if (newState.state === 'STATE_PLAYING') {
-        newState.health -= 1;
+        // newState.health -= 1;
         if (newState.health <= 0) {
           newState.isGameOver = true;
           newState.numEnemies = 0;
