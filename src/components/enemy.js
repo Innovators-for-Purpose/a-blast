@@ -84,8 +84,8 @@ AFRAME.registerComponent('enemy', {
 
       var mesh = this.el.getObject3D('mesh');
       this.whiteMaterial = new THREE.MeshBasicMaterial({color: this.color, transparent: true });
-      mesh.normalMaterial = mesh.material;
-      mesh.material = this.whiteMaterial;
+      // mesh.normalMaterial = mesh.material;
+      // mesh.material = this.whiteMaterial;
       this.gunGlow.visible = false;
 
       this.system.activeEnemies.splice(this.system.activeEnemies.indexOf(this.el), 1);
@@ -101,9 +101,9 @@ AFRAME.registerComponent('enemy', {
   reset: function () {
     var mesh = this.el.getObject3D('mesh');
     if (mesh) {
-      mesh.material.opacity = 1;
+      // mesh.material.opacity = 1;
       mesh.scale.set(this.scale, this.scale, this.scale);
-      mesh.material = mesh.normalMaterial;
+      // mesh.material = mesh.normalMaterial;
       this.gunGlow.visible = true;
       this.gunGlow.scale.set(1, 1, 1);
       this.gunGlowMaterial.opacity = 0.3;
@@ -209,8 +209,8 @@ AFRAME.registerComponent('enemy', {
       var scale = this.scale + t0 * ( 2 - t0 ); //out easing
 
        var mesh = this.el.getObject3D('mesh');
-      mesh.scale.set(scale, scale, scale);
-      mesh.material.opacity = Math.max(0, 1 - t0 * 2.5);
+      // mesh.scale.set(scale, scale, scale);
+      // mesh.material.opacity = Math.max(0, 1 - t0 * 2.5);
       if (t0 >= 1) {
         this.die();
       }
